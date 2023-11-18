@@ -1,15 +1,15 @@
-$sudo apt install wget git -y
+sudo apt install wget git -y
 
-$wget -O "https://raw.githubusercontent.com/Limo123123/limo-subsystem/main/installfilespackages/packages/updater"
+wget -O "https://raw.githubusercontent.com/Limo123123/limo-subsystem/main/installfilespackages/packages/updater"
 
-$chmod +x "updater"
+chmod +x "updater"
 
-$sudo mv "updater" /usr/bin
+sudo mv "updater" /usr/bin
 
-$wget -O "https://raw.githubusercontent.com/Limo123123/limo-subsystem/main/installfilespackages/packages/limo"
+wget -O "https://raw.githubusercontent.com/Limo123123/limo-subsystem/main/installfilespackages/packages/limo"
 
-$chmod +x "limo"
+chmod +x "limo"
 
-$sudo mv "limo" /usr/bin
+sudo mv "limo" /usr/bin
 
-$echo "Installed the limo-subsystem"
+echo "Installed the limo-subsystem"
