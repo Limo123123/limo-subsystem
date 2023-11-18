@@ -1,12 +1,12 @@
 sudo apt install wget git -y;
 
-wget https://raw.githubusercontent.com/Limo123123/limo-subsystem/main/installfilespackages/packages/updater;
+curl https://raw.githubusercontent.com/Limo123123/limo-subsystem/main/installfilespackages/packages/updater;
 
 chmod +x updater;
 
 sudo mv updater /usr/bin;
 
-wget https://raw.githubusercontent.com/Limo123123/limo-subsystem/main/installfilespackages/packages/limo;
+curl https://raw.githubusercontent.com/Limo123123/limo-subsystem/main/installfilespackages/packages/limo;
 
 chmod +x limo;
 
