@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#                 Code, Compile, Run and Debug Bash script online.
+# Write your code in this editor and press "Run" button to execute it.
+
+if [ "$EUID" -ne 0 ]
+  then echo "The command limo says the status of your subsystem. if you say limoupdate it updates it. this function is at the moment not aviable Try superuser also sudo";
+  exit
+fi
+
+echo "Good you run it as root. Youre using the Version 1.0.";
+
+echo "To update go to my Github Page:";
+
+echo "https://github.com/Limo123123/limo-subsystem";
+
+exit
