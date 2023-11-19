@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update the packages
-echo "Updating the Packages";
+echo "Updating the Packages"
 sudo apt update && sudo apt upgrade
 
 # Ask the user if they want to reboot
