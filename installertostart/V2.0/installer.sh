@@ -1,12 +1,10 @@
 #!/bin/bash
 
-# Lade die Dateien herunter
 updater=$(curl -O https://raw.githubusercontent.com/Limo123123/limo-subsystem/main/installfilespackages/packages/updater)
-limo=$(curl -O https://raw.githubusercontent.com/Limo123123/limo-subsystem/main/installfilespackages/packages/limo)
+chmod u+x,o+x $updater
 
-# Mache die Dateien ausführbar
-chmod u+x $updater
-chmod u+x $limo
+limo=$(curl -O https://raw.githubusercontent.com/Limo123123/limo-subsystem/main/installfilespackages/packages/limo)
+chmod u+x,o+x $limo
 
 # Verschiebe die Dateien nach /usr/bin
 sudo mv $updater /usr/bin
