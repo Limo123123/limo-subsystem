@@ -5,8 +5,8 @@ updater=$(curl -O https://raw.githubusercontent.com/Limo123123/limo-subsystem/ma
 limo=$(curl -O https://raw.githubusercontent.com/Limo123123/limo-subsystem/main/installfilespackages/packages/limo)
 
 # Mache die Dateien ausführbar
-chmod +x $updater
-chmod +x $limo
+chmod u+x $updater
+chmod u+x $limo
 
 # Verschiebe die Dateien nach /usr/bin
 sudo mv $updater /usr/bin
