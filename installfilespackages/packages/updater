@@ -1,19 +1,24 @@
-#                             Online Bash Shell.
-#                 Code, Compile, Run and Debug Bash script online.
-# Write your code in this editor and press "Run" button to execute it.
 #!/bin/bash
 
+# Update the packages
 echo "Updating the Packages";
-
 sudo apt update && sudo apt upgrade
 
-read -p "Do you want to Reboot? (yes/no) " yn
+# Ask the user if they want to reboot
+yn=$(read -p "Do you want to Reboot? (yes/no) " | tr "\n" " ")
 
-case $yn in 
-	yes ) echo "ok, we will proceed";
-	      sudo reboot;;
-	no ) echo "exiting...";
-		exit;;
-	* ) echo "invalid response";
-		exit 1;;
+# Process the user's response
+case $yn in
+  yes )
+    echo "ok, we will proceed";
+    sudo reboot;
+    ;;
+  no )
+    echo "exiting...";
+    exit;
+    ;;
+  * )
+    echo "invalid response";
+    exit 1;
+    ;;
 esac
