@@ -1,6 +1,24 @@
 #!/bin/sh
 
 # Update the packages
-echo "Updating the Packages"
+echo "Updating the Packages";
 sudo apt update && sudo apt upgrade
 
+# Ask the user if they want to reboot
+yn=$(read -p "Do you want to Reboot? (yes/no) " | tr "\n" " ")
+
+# Process the user's response
+case $yn in
+  yes )
+    echo "ok, we will proceed";
+    sudo reboot;
+    ;;
+  no )
+    echo "exiting...";
+    exit;
+    ;;
+  * )
+    echo "invalid response";
+    exit 1;
+    ;;
+esac
