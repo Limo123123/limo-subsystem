@@ -35,3 +35,4 @@ sudo chmod +x "$INSTALL_DIR/update"
 sudo chmod +x "$INSTALL_DIR/limo"
 
 echo "Die Befehle 'update' und 'limo' wurden erfolgreich hinzugefügt."
+
