@@ -25,14 +25,17 @@ reboot_system() {
 INSTALL_DIR="/usr/bin"
 
 # Hinzufügen des 'update'-Befehls
-echo -e "#!/bin/bash\ninstall_updates\nreboot_system" | sudo tee "$INSTALL_DIR/update" > /dev/null
+echo -e "#!/bin/bash\ninstall_updates" | sudo tee "$INSTALL_DIR/update" > /dev/null
+
+# Hinzufügen des 'update_and_reboot'-Befehls
+echo -e "#!/bin/bash\ninstall_updates\nreboot_system" | sudo tee "$INSTALL_DIR/update_and_reboot" > /dev/null
 
 # Hinzufügen des 'limo'-Befehls
 echo -e "#!/bin/bash\nif [ \"\$(id -u)\" -eq 0 ]; then\necho \"Du bist root!\"\nelse\necho \"Du bist kein root.\"\nfi" | sudo tee "$INSTALL_DIR/limo" > /dev/null
 
 # Ausführbare Rechte setzen
 sudo chmod +x "$INSTALL_DIR/update"
+sudo chmod +x "$INSTALL_DIR/update_and_reboot"
 sudo chmod +x "$INSTALL_DIR/limo"
 
-echo "Die Befehle 'update' und 'limo' wurden erfolgreich hinzugefügt."
-
+echo "Die Befehle 'update', 'update_and_reboot' und 'limo' wurden erfolgreich hinzugefügt."
