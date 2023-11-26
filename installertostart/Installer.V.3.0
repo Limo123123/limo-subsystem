@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Überprüfen, ob der Benutzer root ist
+if [ "$(id -u)" -eq 0 ]; then
+    echo "Sie sind als root angemeldet."
+else
+    echo "Sie sind nicht als root angemeldet. Bitte führen Sie das Skript als root aus."
+    exit 1
+fi
+
+# Funktion zum Installieren von Updates
+install_updates() {
+    echo "Führe 'sudo apt update' aus..."
+    sudo apt update
+
+    echo "Führe 'sudo apt upgrade -y' aus..."
+    sudo apt upgrade -y
+}
+
+# Funktion zum Rebooten des Systems
+reboot_system() {
+    echo "Das System wird neu gestartet..."
+    sudo reboot
+}
+
+# Hinzufügen des 'update'-Befehls
+update() {
+    install_updates
+    reboot_system
+}
+
+# Hinzufügen des 'limo'-Befehls
+limo() {
+    if [ "$(id -u)" -eq 0 ]; then
+        echo "Du bist root!"
+    else
+        echo "Du bist kein root."
+    fi
+}
+
+# Installation der Befehle unter /usr/bin
+cp "$0" /usr/bin/update
+cp "$0" /usr/bin/limo
+
+# Ausführbare Rechte setzen
+chmod +x /usr/bin/update
+chmod +x /usr/bin/limo
+
+echo "Die Befehle 'update' und 'limo' wurden erfolgreich hinzugefügt."
+
