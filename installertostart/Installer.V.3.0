@@ -1,10 +1,8 @@
 #!/bin/bash
 
 # Überprüfen, ob der Benutzer root ist
-if [ "$(id -u)" -eq 0 ]; then
-    echo "Sie sind als root angemeldet."
-else
-    echo "Sie sind nicht als root angemeldet. Bitte führen Sie das Skript als root aus."
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Dieses Skript muss als root ausgeführt werden. Bitte führen Sie es mit sudo aus."
     exit 1
 fi
 
@@ -35,6 +33,22 @@ limo() {
         echo "Du bist root!"
     else
         echo "Du bist kein root."
+    fi
+}
+
+# Installationsverzeichnis
+INSTALL_DIR="/usr/bin"
+
+# Kopieren und Umbenennen der Befehle mit sudo mv
+sudo mv "$0" "$INSTALL_DIR/update"
+sudo mv "$0" "$INSTALL_DIR/limo"
+
+# Ausführbare Rechte setzen
+sudo chmod +x "$INSTALL_DIR/update"
+sudo chmod +x "$INSTALL_DIR/limo"
+
+echo "Die Befehle 'update' und 'limo' wurden erfolgreich hinzugefügt."
+
     fi
 }
 
