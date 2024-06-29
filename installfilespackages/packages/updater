@@ -4,21 +4,15 @@
 echo "Updating the Packages";
 sudo apt update && sudo apt upgrade
 
-# Ask the user if they want to reboot
-yn=$(read -p "Do you want to Reboot? (yes/no) " | tr "\n" " ")
+# Frage den Benutzer nach Bestätigung
+echo "Möchten Sie den Computer neu starten? (Ja/Nein)"
+read -p "Eingabe: " antwort
 
-# Process the user's response
-case $yn in
-  yes )
-    echo "ok, we will proceed";
-    sudo reboot;
-    ;;
-  no )
-    echo "exiting...";
-    exit;
-    ;;
-  * )
-    echo "invalid response";
-    exit 1;
-    ;;
-esac
+if [ "$antwort" = "Ja" ]; then
+  # Führe sudo reboot mit erhöhten Rechten aus
+  sudo reboot
+else
+  # Beende das Skript ohne Aktion
+  echo "Neustart abgebrochen."
+  exit 0
+fi
