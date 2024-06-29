@@ -5,10 +5,10 @@ echo "Updating the Packages";
 sudo apt update && sudo apt upgrade
 
 # Frage den Benutzer nach Bestätigung
-echo "Möchten Sie den Computer neu starten? (Ja/Nein)"
+echo "Möchten Sie den Computer neu starten? (j/n)"
 read -p "Eingabe: " antwort
 
-if [ "$antwort" = "Ja" ]; then
+if [ "$antwort" = "j" ]; then
   # Führe sudo reboot mit erhöhten Rechten aus
   sudo reboot
 else
