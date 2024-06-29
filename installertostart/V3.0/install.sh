@@ -11,6 +11,6 @@ chmod u+x limo
 sudo cp limo /usr/bin/
 sudo cp updater /usr/bin/
 
-rm -r installfilesfrominstall
+sudo rm -r installfilesfrominstall
 
 echo "Install Complete"
